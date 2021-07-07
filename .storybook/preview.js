@@ -1,5 +1,6 @@
 import { ChakraProvider, extendTheme, Box } from '@chakra-ui/react'
 
+// TODO: This needs to be part of the library
 const theme = extendTheme({
   colors: {
     black: {

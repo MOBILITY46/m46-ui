@@ -14,6 +14,7 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 export const Variants = () => {
   return (
     <VStack align="flex-start" spacing={5}>
+      <Template>Default</Template>
       <Template>Primary</Template>
       <Template buttonType="secondary">Secondary</Template>
       <Template size="xs" buttonType="primary">Small</Template>

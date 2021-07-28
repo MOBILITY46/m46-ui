@@ -11,6 +11,12 @@ module.exports = {
   webpackFinal: async (config) => {
     return {
       ...config,
+      plugins: config.plugins.filter(plugin => {
+        if (plugin.constructor.name === 'ESLintWebpackPlugin') {
+          return false
+        }
+        return true
+      }),
       resolve: {
         ...config.resolve,
         alias: {

@@ -1,2 +1,3 @@
-export * from './slide-sheet'
+export * from './card'
 export * from './button'
+export * from './icons'

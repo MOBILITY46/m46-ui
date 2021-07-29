@@ -1,12 +1,14 @@
 import { ReactNode } from 'react'
 
-export interface CardContentProps {
-  header: ReactNode[]
-  body: ReactNode[]
-  footer: ReactNode[]
-  FlipTrigger?: JSX.Element
+export interface CardProps {
+  content: {
+    header: ReactNode[] | ReactNode
+    body: ReactNode[] | ReactNode
+    footer: ReactNode[] | ReactNode
+  }
 }
 
-export interface CardProps {
-  content: CardContent | [CardContentProps, CardContentProps]
+export interface FlipCardProps {
+  front: ReactNode[] | ReactNode
+  back: ReactNode[] | ReactNode
 }

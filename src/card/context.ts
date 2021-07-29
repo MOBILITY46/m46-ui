@@ -1,10 +1,10 @@
 import { createContext } from '../utils'
-import type { UseCardReturn } from './use-card'
+import type { UseFlipCardReturn } from './use-flip-card'
 
-const [CardContextProvider, useCardContext] = createContext<UseCardReturn>({
+const [FlipCardContextProvider, useFlipCardContext] = createContext<UseFlipCardReturn>({
   strict: true,
-  name: 'CardContext',
-  errorMessage: 'useCardContext: `context` is undefined. Seems you forgot to wrap card components in `<Card />`',
+  name: 'FlipCardContext',
+  errorMessage: 'useFlipCardContext: `context` is undefined',
 })
 
-export { CardContextProvider, useCardContext }
+export { FlipCardContextProvider, useFlipCardContext }

@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { VStack, Icon } from '@chakra-ui/react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 

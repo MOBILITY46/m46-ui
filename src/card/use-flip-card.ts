@@ -3,7 +3,7 @@ import { callAllHandlers } from '../utils'
 
 export type CardFace = 'front' | 'back'
 
-export function useCard() {
+export function useFlipCard() {
   const [face, setFace] = useState<CardFace>('front')
 
   const getTriggerProps = useCallback(
@@ -22,4 +22,4 @@ export function useCard() {
   }
 }
 
-export type UseCardReturn = ReturnType<typeof useCard>
+export type UseFlipCardReturn = ReturnType<typeof useFlipCard>

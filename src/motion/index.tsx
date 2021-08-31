@@ -1,7 +1,7 @@
-import { Box, BoxProps, Flex, FlexProps } from '@chakra-ui/layout'
-import { Button, ButtonProps } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/layout'
+import { Button } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 
-export const MotionBox = motion<BoxProps>(Box)
-export const MotionFlex = motion<FlexProps>(Flex)
-export const MotionButton = motion<ButtonProps>(Button)
+export const MotionBox = motion(Box)
+export const MotionFlex = motion(Flex)
+export const MotionButton = motion(Button)

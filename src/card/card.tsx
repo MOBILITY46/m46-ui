@@ -1,9 +1,15 @@
 import * as React from 'react'
-import { Box } from '@chakra-ui/layout'
+import type { ReactNode } from 'react'
 import styled from '@emotion/styled'
 import { MotionBox } from '../motion'
-import { AnimatePresence } from 'framer-motion'
-import type { CardProps as Props } from './types.d'
+
+export interface CardProps {
+  content: {
+    header: ReactNode[] | ReactNode
+    body: ReactNode[] | ReactNode
+    footer: ReactNode[] | ReactNode
+  }
+}
 
 const CardWrapper = styled(MotionBox)`
   display: grid;
@@ -54,7 +60,7 @@ const FooterWrapper = styled(MotionBox)`
   border-top: 1px solid #e5e5e5;
 `
 
-export const Card = (props: Props) => {
+export const Card = (props: CardProps) => {
   return (
     <CardWrapper role="card" drag dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}>
       <HeaderWrapper>{props.content.header}</HeaderWrapper>

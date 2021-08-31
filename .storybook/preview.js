@@ -19,9 +19,7 @@ const theme = extendTheme({
 
 export const Chakra = ({ children }) => (
   <ChakraProvider theme={theme}>
-    <Box p={5}>
-      {children}
-    </Box>
+    {children}
   </ChakraProvider>
 )
 

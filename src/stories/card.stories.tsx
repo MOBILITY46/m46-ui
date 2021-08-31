@@ -31,7 +31,12 @@ export const Flip = () => {
         <Card
           content={{
             header: <Heading>Front</Heading>,
-            body: <Lorem p={2} />,
+            body: (
+              <>
+                <Lorem p={2} />
+                <Button>Some button</Button>
+              </>
+            ),
             footer: (
               <FlipCardTrigger>
                 <Button>Flip</Button>

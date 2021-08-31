@@ -1,56 +1,39 @@
 import * as React from 'react'
-import { VStack, Icon } from '@chakra-ui/react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { controlDisabled } from './props'
 
-import { Button } from '../'
+import { Button, HeartIcon } from '../'
 
 export default {
   title: 'Components/Button',
   component: Button,
+  argTypes: {
+    buttonType: {
+      options: ['primary', 'secondary'],
+      control: { type: 'radio' },
+    },
+    ...controlDisabled,
+  },
 } as ComponentMeta<typeof Button>
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 
-export const Variants = () => {
-  return (
-    <VStack align="flex-start" spacing={5}>
-      <Template>Default</Template>
-      <Template>Primary</Template>
-      <Template buttonType="secondary">Secondary</Template>
-      <Template size="xs" buttonType="primary">
-        Small
-      </Template>
-      <Template size="lg" buttonType="primary">
-        Large
-      </Template>
-      <Template size="lg" buttonType="primary" withAnimation>
-        Animated
-      </Template>
+export const Primary: ComponentStory<typeof Button> = (args) => <Template {...args}>Primary</Template>
 
-      <Template leftIcon={<Icon />} buttonType="primary">
-        With left icon
-      </Template>
-      <Template leftIcon={<Icon />} buttonType="secondary">
-        With left icon
-      </Template>
-      <Template rightIcon={<Icon />} buttonType="primary">
-        With right icon
-      </Template>
-      <Template rightIcon={<Icon />} buttonType="secondary">
-        With right icon
-      </Template>
-      <Template isLoading={true} buttonType="primary">
-        Loading
-      </Template>
-      <Template isLoading={true} buttonType="secondary">
-        Loading
-      </Template>
-      <Template isDisabled={true} buttonType="primary">
-        Disabled
-      </Template>
-      <Template isDisabled={true} buttonType="secondary">
-        Disabled
-      </Template>
-    </VStack>
-  )
-}
+export const Secondary: ComponentStory<typeof Button> = (args) => (
+  <Template buttonType="secondary" {...args}>
+    Secondary
+  </Template>
+)
+
+export const WithLeftIcon: ComponentStory<typeof Button> = (args) => (
+  <Template {...args} leftIcon={<HeartIcon />}>
+    Left icon
+  </Template>
+)
+
+export const WithRightIcon: ComponentStory<typeof Button> = (args) => (
+  <Template {...args} rightIcon={<HeartIcon />}>
+    Left icon
+  </Template>
+)

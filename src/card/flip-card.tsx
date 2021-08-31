@@ -1,10 +1,15 @@
 import * as React from 'react'
+import type { ReactNode } from 'react'
 import { Box as ChakraBox } from '@chakra-ui/layout'
 import { AnimatePresence, motion } from 'framer-motion'
 
-import type { FlipCardProps as Props } from './types.d'
 import { useFlipCard } from './use-flip-card'
 import { useFlipCardContext, FlipCardContextProvider } from './context'
+
+export interface FlipCardProps {
+  front: ReactNode[] | ReactNode
+  back: ReactNode[] | ReactNode
+}
 
 const Box: React.FC = (props) => (
   <motion.div
@@ -27,10 +32,8 @@ const Box: React.FC = (props) => (
   </motion.div>
 )
 
-export const FlipCard = (props: Props) => {
+export const FlipCard = (props: FlipCardProps) => {
   const context = useFlipCard()
-
-  console.log('ctx', context.face)
 
   return (
     <FlipCardContextProvider value={context}>

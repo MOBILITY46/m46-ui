@@ -15,12 +15,12 @@ export default {
 } as ComponentMeta<typeof Tabs>
 
 const tabs = {
-  'Tab 1': <Box backgroundColor="red.200" w="100%" h="300px" p={2} borderRadius={4} />,
-  'Tab 2': <Box backgroundColor="red.300" w="100%" h="300px" p={2} borderRadius={4} />,
-  'Tab 3': <Box backgroundColor="red.400" w="100%" h="300px" p={2} borderRadius={4} />,
-  'Tab 4': <Box backgroundColor="red.500" w="100%" h="300px" p={2} borderRadius={4} />,
-  'Tab 5': <Box backgroundColor="red.600" w="100%" h="300px" p={2} borderRadius={4} />,
-  'Tab 6': <Box backgroundColor="red.700" w="100%" h="300px" p={2} borderRadius={4} />,
+  'Tab 1': <Box m={1} backgroundColor="red.200" h="300px" p={2} borderRadius={4} />,
+  'Tab 2': <Box m={1} backgroundColor="red.300" h="300px" p={2} borderRadius={4} />,
+  'Tab 3': <Box m={1} backgroundColor="red.400" h="300px" p={2} borderRadius={4} />,
+  'Tab 4': <Box m={1} backgroundColor="red.500" h="300px" p={2} borderRadius={4} />,
+  'Tab 5': <Box m={1} backgroundColor="red.600" h="300px" p={2} borderRadius={4} />,
+  'Tab 6': <Box m={1} backgroundColor="red.700" h="300px" p={2} borderRadius={4} />,
 }
 
 export const Example = () => {

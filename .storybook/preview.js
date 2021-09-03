@@ -1,21 +1,4 @@
-import { ChakraProvider, extendTheme, Box } from '@chakra-ui/react'
-
-// TODO: This needs to be part of the library
-const theme = extendTheme({
-  colors: {
-    black: {
-      100: "#2e2e2e",
-      200: "#2e2e2e",
-      300: "#2e2e2e",
-      400: "#262626",
-      500: "#262626",
-      600: "#2D3748",
-      700: "#1A202C",
-      800: "#212121",
-      900: "#000000",
-    },
-  },
-})
+import { UIProvider } from '../src/theme'
 
 export const Chakra = ({ children }) => (
   <ChakraProvider theme={theme}>
@@ -25,9 +8,9 @@ export const Chakra = ({ children }) => (
 
 export const decorators = [
   Story => (
-    <Chakra>
+    <UIProvider>
       {Story()}
-    </Chakra>
+    </UIProvider>
   )
 ]
 

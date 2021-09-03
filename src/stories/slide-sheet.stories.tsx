@@ -1,48 +1,46 @@
 import * as React from 'react'
-import { useRef } from 'react'
+import { useState } from 'react'
 
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { ComponentMeta } from '@storybook/react'
+import { controlDisabled } from './props'
 
-import { SlideSheet, SlideSheetRef, Button } from '../'
+import { SlideSheet, Button } from '../'
 
 export default {
   title: 'Components/SlideSheet',
   component: SlideSheet,
   argTypes: {
-    mouseEnable: {
-      options: [true, false],
-      control: { type: 'radio' },
-    },
+    ...controlDisabled,
   },
 } as ComponentMeta<typeof SlideSheet>
 
 const style = {
   content: {
-    height: 300,
+    height: '80vh',
+    width: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    overflow: 'hidden',
+    backgroundColor: 'blue',
     borderTopLeftRadius: '10px',
     borderTopRightRadius: '10px',
   },
 }
 
-export const Example: ComponentStory<typeof SlideSheet> = (args) => {
-  const ref = useRef<SlideSheetRef>()
-
-  const handleToggle = () => {
-    if (ref.current) ref.current.toggle()
-  }
+export const Example = (args: any) => {
+  const [show, setShow] = useState(false)
 
   return (
     <>
-      <Button mr={3} onClick={handleToggle}>
+      <Button mr={3} onClick={() => setShow(!show)}>
         toggle
       </Button>
-      <SlideSheet ref={ref} {...args}>
-        <div style={style.content}>🙂 Hai</div>
-      </SlideSheet>
+      {show && (
+        <SlideSheet isOpen={show} onClose={() => setShow(false)} {...args}>
+          <div style={style.content}>Hello, World!</div>
+        </SlideSheet>
+      )}
     </>
   )
 }

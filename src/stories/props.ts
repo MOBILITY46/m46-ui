@@ -44,4 +44,6 @@ export const controlDisabled = {
   _groupDisabled: { table: { disable: true } },
   _groupInvalid: { table: { disable: true } },
   _groupChecked: { table: { disable: true } },
+  isOpen: { table: { disable: true } },
+  onClose: { table: { disable: true } },
 }

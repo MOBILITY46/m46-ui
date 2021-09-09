@@ -8,9 +8,10 @@ export function useMeasure() {
 
   useLayoutEffect(() => {
     function onResize([entry]: ResizeObserverEntry[]) {
+      const { width, height } = entry.contentRect
       setBounds({
-        height: entry.contentRect.height,
-        width: entry.contentRect.width,
+        height,
+        width,
       })
     }
 

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Box } from '@chakra-ui/react'
 
 export const TabContainer = styled(Box)`
-  overflow-y: hidden;
+  overflow: hidden;
   box-shadow: none;
   margin-bottom: 1rem;
 `
@@ -16,6 +16,7 @@ export const TabList = styled(Box)`
 
 export const TabItem = styled(motion.button)<{ isActive: boolean }>`
   white-space: nowrap;
+  display: inline;
   -webkit-appearance: none;
   box-sizing: border-box;
   text-align: center;
@@ -42,6 +43,18 @@ export const TabItem = styled(motion.button)<{ isActive: boolean }>`
   color: ${(p) => (p.isActive ? '#1e90ff' : '#939393')};
   margin: 0px;
   overflow: hidden;
+`
+
+export const TabItemWrapper = styled(motion(Box))`
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+
+  ::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+  }
 `
 
 export const Slider = styled(motion(Box))`

@@ -1,25 +1,32 @@
 import * as React from 'react'
+import type { FC } from 'react'
 import { Button as ChakraButton, ButtonProps as ChakraButtonProps } from '@chakra-ui/react'
+import { Color } from '../theme'
 
-export interface ButtonProps extends ChakraButtonProps {
-  buttonType?: 'primary' | 'secondary'
+export interface ButtonProps {
+  colorScheme: Color
+  variant: 'solid' | 'outline' | 'link' | 'ghost'
+  rounded?: boolean
+  leftIcon?: JSX.Element
+  rightIcon?: JSX.Element
 }
 
 /**
  * A Chakra button with some overridden values.
  */
 
-export const Button = ({ buttonType, ...props }: ButtonProps) => {
-  const t = buttonType || 'primary'
-
+export const Button: FC<ButtonProps> = ({
+  colorScheme = 'primary',
+  variant = 'solid',
+  rounded = true,
+  ...props
+}: ButtonProps) => {
   const p = Object.assign({}, props, {
-    variant: t === 'secondary' ? 'outline' : 'solid',
-    borderRadius: '2px',
-    fontWeight: 400,
-    colorScheme: 'black',
-    _active: {
-      textColor: t === 'secondary' && '#000',
-    },
+    variant,
+    fontSize: '1.125rem',
+    borderRadius: rounded ? '10px' : 0,
+    fontWeight: 500,
+    colorScheme,
   })
 
   return <ChakraButton {...p} />

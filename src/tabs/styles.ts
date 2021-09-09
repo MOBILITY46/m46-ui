@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
 
+import { colors } from '../theme'
+import type { Color } from '../theme'
 import { Box } from '@chakra-ui/react'
 
 export const TabContainer = styled(Box)`
@@ -14,7 +16,7 @@ export const TabList = styled(Box)`
   position: relative;
 `
 
-export const TabItem = styled(motion.button)<{ isActive: boolean }>`
+export const TabItem = styled(motion.button)<{ isActive: boolean; color: Color }>`
   white-space: nowrap;
   display: inline;
   -webkit-appearance: none;
@@ -40,7 +42,7 @@ export const TabItem = styled(motion.button)<{ isActive: boolean }>`
   line-height: 1.5;
   font-size: 0.875rem;
   font-weight: 600;
-  color: ${(p) => (p.isActive ? '#1e90ff' : '#939393')};
+  color: ${(p) => (p.isActive ? colors[p.color]['600'] : colors[p.color]['500'])};
   margin: 0px;
   overflow: hidden;
 `
@@ -57,13 +59,14 @@ export const TabItemWrapper = styled(motion(Box))`
   }
 `
 
-export const Slider = styled(motion(Box))`
+export const Slider = styled(motion(Box))<{ color: Color }>`
   height: 2px;
   margin-left: 0;
   margin-right: 0;
   bottom: 0;
   position: absolute;
   background-color: #1e90ff;
+  background-color: ${(p) => colors[p.color]['500']};
 `
 
 export const PagerContainer = styled(Box)`

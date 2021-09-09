@@ -1,13 +1,15 @@
 import * as React from 'react'
+import type { FC } from 'react'
 import { useState, useEffect, useRef } from 'react'
 import { useMeasure } from '../utils'
 import { TabContainer, TabList, TabItem, Slider, TabItemWrapper } from './styles'
+import { colors } from '../theme'
 
 import { Pager } from './pager'
 
 import type { TabsProps } from './types'
 
-export const Tabs = (props: TabsProps) => {
+export const Tabs: FC<TabsProps> = ({ colorScheme = 'primary', ...props }: TabsProps) => {
   const [value, setValue] = useState(0)
   const childRefs = useRef(new Map())
   const tabListRef = useRef<HTMLDivElement>(null)
@@ -15,7 +17,7 @@ export const Tabs = (props: TabsProps) => {
   const { bounds, ref } = useMeasure()
   const [scrollOffset, setScrollOffset] = useState(0)
 
-  const tabNames = Object.keys(props.tabs)
+  const tabNames = Object.keys(props.tabs || {})
 
   useEffect(() => {
     const target = childRefs.current.get(value)
@@ -68,18 +70,13 @@ export const Tabs = (props: TabsProps) => {
       let scroll: null | 'left' | 'right' = null
       let offset = scrollOffset
 
-      if (right < tRect.width) {
-        // We are moving right
+      if (left < tRect.width && value < 2) {
+        offset = 0
+      } else if (right < tRect.width) {
         scroll = 'right'
         offset = scrollOffset - tRect.width
         setScrollOffset((o) => (o -= tRect.width))
-      }
-
-      if (left < tRect.width && value === 0) {
-        // We are at start
-        offset = 0
       } else if (left < tRect.width) {
-        // We are moving left
         scroll = 'left'
         offset = scrollOffset + tRect.width
       }
@@ -107,12 +104,13 @@ export const Tabs = (props: TabsProps) => {
       <TabContainer ref={ref}>
         <TabList ref={tabListRef}>
           <TabItemWrapper animate={{ x: scrollOffset }}>
-            {tabNames.map((tab, i) => (
+            {(tabNames || []).map((tab, i) => (
               <TabItem
+                color={colorScheme}
                 key={tab}
                 isActive={i === value}
                 transition={{ duration: 0.3 }}
-                whileTap={{ backgroundColor: '#e9e9e9' /* gray.300 */ }}
+                whileTap={{ backgroundColor: colors['gray']['400'] }}
                 ref={(el) => childRefs.current.set(i, el)}
                 onClick={() => setValue(i)}
               >
@@ -122,6 +120,7 @@ export const Tabs = (props: TabsProps) => {
           </TabItemWrapper>
           {slider.hasValue && (
             <Slider
+              color={colorScheme}
               transition={{
                 tension: 190,
                 friction: 70,

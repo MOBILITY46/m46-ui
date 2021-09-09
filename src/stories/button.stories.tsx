@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { controlDisabled } from './props'
 
 import { Button, HeartIcon } from '../'
 
@@ -8,23 +7,26 @@ export default {
   title: 'Components/Button',
   component: Button,
   argTypes: {
-    buttonType: {
-      options: ['primary', 'secondary'],
-      control: { type: 'radio' },
+    colorScheme: {
+      options: ['primary', 'secondary', 'tertiary'],
     },
-    ...controlDisabled,
+    variant: {
+      options: ['solid', 'ghost', 'outline', 'link'],
+    },
+    rounded: {
+      options: [true, false],
+    },
+    leftIcon: { table: { disable: true } },
+    rightIcon: { table: { disable: true } },
   },
 } as ComponentMeta<typeof Button>
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
+const Template: ComponentStory<typeof Button> = (args) => {
+  console.log('args', args)
+  return <Button {...args} />
+}
 
-export const Primary: ComponentStory<typeof Button> = (args) => <Template {...args}>Primary</Template>
-
-export const Secondary: ComponentStory<typeof Button> = (args) => (
-  <Template buttonType="secondary" {...args}>
-    Secondary
-  </Template>
-)
+export const Default: ComponentStory<typeof Button> = (args) => <Template {...args}>Default</Template>
 
 export const WithLeftIcon: ComponentStory<typeof Button> = (args) => (
   <Template {...args} leftIcon={<HeartIcon />}>
@@ -34,6 +36,6 @@ export const WithLeftIcon: ComponentStory<typeof Button> = (args) => (
 
 export const WithRightIcon: ComponentStory<typeof Button> = (args) => (
   <Template {...args} rightIcon={<HeartIcon />}>
-    Left icon
+    Right icon
   </Template>
 )

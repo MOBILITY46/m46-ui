@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { Box } from '@chakra-ui/react'
 
-import { ComponentMeta } from '@storybook/react'
-import { controlDisabled } from './props'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { Tabs } from '../'
 
@@ -10,7 +9,16 @@ export default {
   title: 'Components/Tabs',
   component: Tabs,
   argTypes: {
-    ...controlDisabled,
+    colorScheme: {
+      options: ['primary', 'secondary', 'tertiary'],
+    },
+  },
+  parameters: {
+    docs: {
+      source: {
+        type: 'code',
+      },
+    },
   },
 } as ComponentMeta<typeof Tabs>
 
@@ -27,10 +35,9 @@ const tabs = {
   'Tab 10': <Box m={1} backgroundColor="purple.700" h="300px" p={2} borderRadius={4} />,
 }
 
-export const Example = () => {
-  return (
-    <>
-      <Tabs tabs={tabs} />
-    </>
-  )
+export const Example: ComponentStory<typeof Tabs> = (args) => {
+  const props = Object.assign({}, args, {
+    tabs,
+  })
+  return <Tabs {...props} />
 }

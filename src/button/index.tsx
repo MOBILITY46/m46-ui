@@ -1,21 +1,22 @@
 import * as React from 'react'
 import type { FC } from 'react'
-import { Button as ChakraButton, ButtonProps as ChakraButtonProps } from '@chakra-ui/react'
-import { Color } from '../theme'
+import { Button as ChakraButton, StyleProps, ButtonProps as ChakraButtonProps } from '@chakra-ui/react'
+import type { Color } from '../theme'
 
 export interface ButtonProps {
-  colorScheme: Color
-  variant: 'solid' | 'outline' | 'link' | 'ghost'
+  colorScheme?: Color
+  variant?: 'solid' | 'outline' | 'link' | 'ghost'
   rounded?: boolean
   leftIcon?: JSX.Element
   rightIcon?: JSX.Element
+  size?: 'lg' | 'md' | 'sm' | 'xs'
 }
 
 /**
  * A Chakra button with some overridden values.
  */
 
-export const Button: FC<ButtonProps> = ({
+export const Button: FC<ButtonProps & StyleProps & ChakraButtonProps> = ({
   colorScheme = 'primary',
   variant = 'solid',
   rounded = true,

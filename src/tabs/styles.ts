@@ -18,6 +18,7 @@ export const TabList = styled(Box)`
 
 export const TabItem = styled(motion.button)<{ isActive: boolean; color: Color }>`
   white-space: nowrap;
+  min-width: 120px;
   display: inline;
   -webkit-appearance: none;
   box-sizing: border-box;

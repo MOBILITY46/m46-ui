@@ -67,34 +67,25 @@ export const Tabs: FC<TabsProps> = ({ colorScheme = 'primary', ...props }: TabsP
         right,
       }
 
-      let scroll: null | 'left' | 'right' = null
-      let offset = scrollOffset
+      if (value === 0) {
+        setSlider(slider)
+        return
+      }
 
-      if (left < tRect.width && value < 2) {
-        offset = 0
-      } else if (right < tRect.width) {
-        scroll = 'right'
-        offset = scrollOffset - tRect.width
+      if (right < tRect.width && value > 1) {
+        slider.left -= tRect.width
+        slider.right += tRect.width
+
         setScrollOffset((o) => (o -= tRect.width))
       } else if (left < tRect.width) {
-        scroll = 'left'
-        offset = scrollOffset + tRect.width
+        slider.left += tRect.width
+        slider.right -= tRect.width
+
+        setScrollOffset((o) => (o += tRect.width))
       }
 
-      switch (scroll) {
-        case 'left':
-          slider.left += tRect.width
-          slider.right -= tRect.width
-          break
-        case 'right':
-          slider.left -= tRect.width
-          slider.right += tRect.width
-          break
-        default:
-          break
-      }
+      console.log(scroll)
 
-      setScrollOffset(offset)
       setSlider(slider)
     }
   }, [value, bounds])
@@ -112,7 +103,7 @@ export const Tabs: FC<TabsProps> = ({ colorScheme = 'primary', ...props }: TabsP
                 transition={{ duration: 0.3 }}
                 whileTap={{ backgroundColor: colors['gray']['400'] }}
                 ref={(el) => childRefs.current.set(i, el)}
-                onClick={() => setValue(i)}
+                onTap={() => setValue(i)}
               >
                 {tab}
               </TabItem>

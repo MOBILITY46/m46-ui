@@ -16,4 +16,4 @@ jobs:
       - name: Install
         run: yarn install
       - name: Deploy Storybook
-        run: npx chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        run: npx chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }} --auto-accept-changes

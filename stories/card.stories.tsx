@@ -5,7 +5,7 @@ import { ComponentMeta } from '@storybook/react'
 import Lorem from 'react-lorem-ipsum'
 import faker from 'faker'
 
-import { Card, FlipCard, Button, FlipCardTrigger } from '../'
+import { Card, FlipCard, Button, FlipCardTrigger } from '../src'
 
 export default {
   title: 'Components/Card',

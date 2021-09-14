@@ -2,7 +2,7 @@ import React from 'react'
 import { VStack } from '@chakra-ui/react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Checkbox } from '../'
+import { Checkbox } from '../src'
 
 export default {
   title: 'Components/Checkbox',

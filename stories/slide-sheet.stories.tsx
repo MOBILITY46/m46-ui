@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { ComponentMeta } from '@storybook/react'
 import { controlDisabled } from './props'
 
-import { SlideSheet, Button } from '../'
+import { SlideSheet, Button } from '../src'
 
 export default {
   title: 'Components/SlideSheet',

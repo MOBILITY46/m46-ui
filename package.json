@@ -2,8 +2,7 @@
   "name": "m46-ui",
   "version": "1.0.9",
   "license": "MIT",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "typings": "dist/types/index.d.ts",
   "exports": {
@@ -19,11 +18,11 @@
     "lint": "eslint 'src/**/*.{js,ts,tsx}'",
     "lint:fix": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
     "build": "concurrently yarn:build:*",
-    "build:esm": "cross-env BABEL_ENV=esm babel src --ignore '*/stories/' --extensions .ts,.tsx -d dist/esm --source-maps",
-    "build:cjs": "cross-env BABEL_ENV=cjs babel src --ignore '*/stories/' --extensions .ts,.tsx -d dist/cjs --source-maps",
+    "build:src": "babel src --ignore '*/stories/' --extensions .ts,.tsx -d dist/esm --source-maps",
     "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types"
   },
   "dependencies": {
+    "typescript": "^4.1.2",
     "@babel/cli": "^7.12.0",
     "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.12.0",
@@ -33,7 +32,6 @@
     "@babel/preset-typescript": "^7.12.0",
     "@babel/runtime": "^7.12.0",
     "concurrently": "5.3.0",
-    "cross-env": "7.0.3",
     "react-scripts": "4.0.3",
     "resize-observer-polyfill": "^1.5.1"
   },
@@ -46,7 +44,6 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "typescript": "^4.1.2",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",

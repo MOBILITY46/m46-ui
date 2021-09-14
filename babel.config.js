@@ -1,7 +1,3 @@
-const BABEL_ENV = process.env.BABEL_ENV
-const isCommonJS = BABEL_ENV !== undefined && BABEL_ENV === 'cjs'
-const isESM = BABEL_ENV !== undefined && BABEL_ENV === 'esm'
-
 module.exports = function (api) {
   api.cache(true)
 
@@ -9,9 +5,9 @@ module.exports = function (api) {
     [
       '@babel/env',
       {
-        modules: isCommonJS ? 'commonjs' : false,
+        modules: false,
         targets: {
-          esmodules: isESM ? true : undefined,
+          esmodules: true,
         },
       },
     ],

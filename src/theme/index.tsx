@@ -3,6 +3,8 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 export type Color = 'black' | 'white' | 'primary' | 'secondary' | 'tertiary' | 'gray' | 'blackAlpha'
 
+type Dict<T = any> = Record<string, T>
+
 export const colors = {
   black: '#000000',
   white: '#ffffff',
@@ -68,7 +70,7 @@ export const colors = {
   },
 }
 
-export const theme = extendTheme({
+export const theme: Dict = extendTheme({
   colors,
   fonts: {
     heading: 'DM Sans',

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/switch/switch.tsx"],"names":["Switch","_props"],"mappings":";;;;;;;;;AAAA;;;;;;AAEO,IAAMA,MAAM,GAAG,SAATA,MAAS,CAACC,MAAD,EAAyB;AAC7C,sBAAO,gCAAP;AACD,CAFM","sourcesContent":["import * as React from 'react'\nexport interface SwitchProps {}\nexport const Switch = (_props: SwitchProps) => {\n  return <div />\n}\n"],"file":"switch.js"}

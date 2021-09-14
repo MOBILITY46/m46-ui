@@ -71,10 +71,28 @@ export const colors: Record<Color, Dict<string> | string> = {
 }
 
 export const theme: Dict = extendTheme({
+  textStyles: {
+    h1: {
+      fontFamily: 'DM Sans',
+      fontWeight: '700',
+    },
+    h2: {
+      fontFamily: 'DM Sans',
+      fontWeight: '500',
+    },
+    h3: {
+      fontFamily: 'DM Sans',
+      fontWeight: '400',
+    },
+    p: {
+      fontFamily: 'DM Sans',
+      fontWeight: '300',
+    },
+  },
   styles: {
     global: (props) => ({
-      '*': {
-        fontFamily: 'DM Sans',
+      'html, body': {
+        fontFamily: 'DM Sans !important',
       },
       body: {
         lineHeight: 'base',

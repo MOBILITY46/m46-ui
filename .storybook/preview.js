@@ -1,9 +1,9 @@
 import { ChakraProvider, extendTheme, Box } from '@chakra-ui/react'
-import { theme, Fonts } from '../src/theme'
+import '@fontsource/dm-sans'
+import { theme } from '../src/theme'
 
 export const Chakra = ({ children }) => (
   <ChakraProvider theme={theme}>
-    <Fonts />
     {children}
   </ChakraProvider>
 )

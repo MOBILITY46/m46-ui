@@ -1,8 +1,5 @@
 import { extendTheme } from '@chakra-ui/react'
-import { Global } from '@emotion/react'
 import { mode } from '@chakra-ui/theme-tools'
-
-import font from '@fontsource/dm-sans'
 
 export type Color = 'black' | 'white' | 'primary' | 'secondary' | 'tertiary' | 'gray' | 'blackAlpha'
 
@@ -73,13 +70,13 @@ export const colors: Record<Color, Dict<string> | string> = {
   },
 }
 
-export const Fonts = () => <Global styles={font} />
-
 export const theme: Dict = extendTheme({
   styles: {
     global: (props) => ({
+      '*': {
+        fontFamily: 'DM Sans',
+      },
       body: {
-        font: 'DM Sans',
         lineHeight: 'base',
         color: mode('gray.800', 'whiteAlpha.900')(props),
         bg: mode('white', 'gray.800')(props),

@@ -1,4 +1,4 @@
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme, theme as defaultTheme } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
 
 export type Color = 'black' | 'white' | 'primary' | 'secondary' | 'tertiary' | 'gray' | 'blackAlpha'
@@ -81,11 +81,18 @@ export const theme: Dict = extendTheme({
       },
     }),
   },
-  colors,
+  colors: { ...defaultTheme.colors, ...colors },
+  textStyles: {
+    body: {
+      fontFamily: 'DM Sans, sans-serif',
+    },
+    heading: {
+      fontFamily: 'DM Sans, sans-serif',
+    },
+  },
+  fonts: {
+    ...defaultTheme.fonts,
+    heading: `DM Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+    body: `DM Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  },
 })
-
-theme.fonts = {
-  heading: `DM Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-  body: `DM Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-  mono: `SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace`,
-}

@@ -1,10 +1,18 @@
-import { UIProvider } from '../src/theme'
+import { ChakraProvider, extendTheme, Box } from '@chakra-ui/react'
+import { theme, Fonts } from '../src/theme'
+
+export const Chakra = ({ children }) => (
+  <ChakraProvider theme={theme}>
+    <Fonts />
+    {children}
+  </ChakraProvider>
+)
 
 export const decorators = [
   Story => (
-    <UIProvider>
+    <Chakra>
       {Story()}
-    </UIProvider>
+    </Chakra>
   )
 ]
 

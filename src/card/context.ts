@@ -1,5 +1,5 @@
 import { createContext } from '../utils'
-import type { UseFlipCardReturn } from './use-flip-card'
+import { UseFlipCardReturn } from './use-flip-card'
 
 const [FlipCardContextProvider, useFlipCardContext] = createContext<UseFlipCardReturn>({
   name: 'FlipCardContext',

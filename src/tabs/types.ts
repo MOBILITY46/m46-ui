@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react'
-import type { Color } from '../theme'
+import { ReactNode } from 'react'
+import { Color } from '../theme'
 
 export interface PagerProps {
   children: ReactNode | ReactNode[]

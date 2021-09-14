@@ -1,5 +1,5 @@
 import * as React from 'react'
-import type { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import styled from '@emotion/styled'
 import { MotionBox } from '../motion'
 

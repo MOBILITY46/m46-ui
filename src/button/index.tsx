@@ -1,7 +1,7 @@
 import * as React from 'react'
-import type { FC } from 'react'
+import { FC } from 'react'
 import { Button as ChakraButton, StyleProps, ButtonProps as ChakraButtonProps } from '@chakra-ui/react'
-import type { Color } from '../theme'
+import { Color } from '../theme'
 
 export interface ButtonProps {
   colorScheme?: Color

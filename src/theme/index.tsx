@@ -1,5 +1,4 @@
 import * as React from 'react'
-import '@fontsource/dm-sans'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 export type Color = 'black' | 'white' | 'primary' | 'secondary' | 'tertiary' | 'gray' | 'blackAlpha'

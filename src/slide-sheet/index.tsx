@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { createPortal } from 'react-dom'
-import type { Props } from './types'
+import { Props } from './types'
 import { SlideSheetComponent } from './component'
 
 export { Props as SlideSheetProps } from './types'

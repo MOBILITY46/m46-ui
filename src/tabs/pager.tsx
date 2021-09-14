@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { PagerContainer, PagerAnimtedContainer, Page } from './styles'
-import type { PagerProps } from './types'
+import { PagerProps } from './types'
 
 export function Pager({ children, value }: PagerProps) {
   return (

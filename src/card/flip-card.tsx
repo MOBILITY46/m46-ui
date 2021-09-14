@@ -1,5 +1,5 @@
 import * as React from 'react'
-import type { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { Box as ChakraBox } from '@chakra-ui/layout'
 import { AnimatePresence, motion } from 'framer-motion'
 

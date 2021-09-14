@@ -4,7 +4,7 @@ import { animate, AnimatePresence, useDragControls, useMotionValue } from 'frame
 
 import { Wrapper, DraggableContainer, Sheet, Content, Mask } from './styles'
 
-import type { Props } from './types'
+import { Props } from './types'
 
 export const SlideSheetComponent = ({ children, isOpen, id, debug, maskClosable, ...props }: Props): JSX.Element => {
   const sheetY = useMotionValue(0)

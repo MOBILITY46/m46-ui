@@ -1,5 +1,5 @@
 import * as React from 'react'
-import type { FC } from 'react'
+import { FC } from 'react'
 import { useState, useEffect, useRef } from 'react'
 import { useMeasure } from '../utils'
 import { TabContainer, TabList, TabItem, Slider, TabItemWrapper } from './styles'
@@ -7,7 +7,7 @@ import { colors } from '../theme'
 
 import { Pager } from './pager'
 
-import type { TabsProps } from './types'
+import { TabsProps } from './types'
 
 export const Tabs: FC<TabsProps> = ({ colorScheme = 'primary', ...props }: TabsProps) => {
   const [value, setValue] = useState(0)

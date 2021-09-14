@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
 
 import { colors } from '../theme'
-import type { Color } from '../theme'
+import { Color } from '../theme'
 import { Box } from '@chakra-ui/react'
 
 export const TabContainer = styled(Box)`

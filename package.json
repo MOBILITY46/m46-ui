@@ -14,6 +14,7 @@
   },
   "scripts": {
     "prepublish": "yarn build",
+    "postinstall": "yarn build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint": "eslint 'src/**/*.{js,ts,tsx}'",

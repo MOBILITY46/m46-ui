@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../src/checkbox/index.ts"],"names":[],"mappings":";;;;;;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA","sourcesContent":["export * from './checkbox'\n"],"file":"index.js"}

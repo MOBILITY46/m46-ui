@@ -1,11 +1,5 @@
 import { UIProvider } from '../src/theme'
 
-export const Chakra = ({ children }) => (
-  <ChakraProvider theme={theme}>
-    {children}
-  </ChakraProvider>
-)
-
 export const decorators = [
   Story => (
     <UIProvider>

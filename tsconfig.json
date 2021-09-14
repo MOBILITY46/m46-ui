@@ -23,7 +23,7 @@
     "outDir": "dist"
   },
   "include": ["src"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "src/stories"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS",

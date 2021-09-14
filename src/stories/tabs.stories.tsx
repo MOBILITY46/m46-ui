@@ -3,7 +3,7 @@ import { Box } from '@chakra-ui/react'
 
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { Tabs } from '../src'
+import { Tabs } from '../'
 
 export default {
   title: 'Components/Tabs',

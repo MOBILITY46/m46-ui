@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Button, HeartIcon } from '../src'
+import { Button, HeartIcon } from '../'
 
 export default {
   title: 'Components/Button',
@@ -30,7 +30,7 @@ export const Default: ComponentStory<typeof Button> = (args) => <Template {...ar
 
 export const WithLeftIcon: ComponentStory<typeof Button> = (args) => (
   <Template {...args} leftIcon={<HeartIcon />}>
-    Left icon
+    left icon
   </Template>
 )
 

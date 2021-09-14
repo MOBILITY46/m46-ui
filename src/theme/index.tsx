@@ -1,11 +1,11 @@
-import * as React from 'react'
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react'
+import { mode } from '@chakra-ui/theme-tools'
 
 export type Color = 'black' | 'white' | 'primary' | 'secondary' | 'tertiary' | 'gray' | 'blackAlpha'
 
 type Dict<T = any> = Record<string, T>
 
-export const colors = {
+export const colors: Record<Color, Dict<string> | string> = {
   black: '#000000',
   white: '#ffffff',
   primary: {
@@ -71,11 +71,15 @@ export const colors = {
 }
 
 export const theme: Dict = extendTheme({
-  colors,
-  fonts: {
-    heading: 'DM Sans',
-    body: 'DM Sans',
+  styles: {
+    global: (props) => ({
+      body: {
+        font: 'DM Sans',
+        lineHeight: 'base',
+        color: mode('gray.800', 'whiteAlpha.900')(props),
+        bg: mode('white', 'gray.800')(props),
+      },
+    }),
   },
+  colors,
 })
-
-export const UIProvider: React.FC = ({ children }) => <ChakraProvider theme={theme}>{children}</ChakraProvider>

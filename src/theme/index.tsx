@@ -71,39 +71,21 @@ export const colors: Record<Color, Dict<string> | string> = {
 }
 
 export const theme: Dict = extendTheme({
-  textStyles: {
-    h1: {
-      fontFamily: 'DM Sans',
-      fontWeight: '700',
-    },
-    h2: {
-      fontFamily: 'DM Sans',
-      fontWeight: '500',
-    },
-    h3: {
-      fontFamily: 'DM Sans',
-      fontWeight: '400',
-    },
-    p: {
-      fontFamily: 'DM Sans',
-      fontWeight: '300',
-    },
-  },
   styles: {
     global: (props) => ({
-      'html, body': {
-        fontFamily: 'DM Sans !important',
-      },
       body: {
         lineHeight: 'base',
         color: mode('gray.800', 'whiteAlpha.900')(props),
         bg: mode('white', 'gray.800')(props),
+        fontFamily: 'body',
       },
     }),
   },
   colors,
-  fonts: {
-    heading: 'DM Sans',
-    body: 'DM Sans',
-  },
 })
+
+theme.fonts = {
+  heading: `DM Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  body: `DM Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  mono: `SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace`,
+}

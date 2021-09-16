@@ -1,5 +1,4 @@
 import { ChakraProvider, extendTheme, Box } from '@chakra-ui/react'
-import '@fontsource/dm-sans'
 import { theme } from '../src/theme'
 
 export const Chakra = ({ children }) => (
